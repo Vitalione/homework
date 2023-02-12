@@ -1,17 +1,24 @@
 .message {
-
+    display: flex;
+    margin: 10px;
+    justify-content: end;
 }
 
 .imageAndText {
-
+    display: flex;
+    justify-content: end;
 }
 
 .imageAndText img {
-
+    height: 50px;
+    width: 50px;
 }
 
 .text {
-
+    padding: 10px;
+    border-radius: 5px 5px 5px 0;
+    background-color: #0066CC
+;
 }
 
 .text:after {
@@ -19,13 +26,22 @@
 }
 
 .name {
-
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
 }
 
 .messageText {
+min-width: 150px;
+    max-width: 300px;
+    word-wrap: break-word;
+    color: white;
+    size: 16px;
 
 }
 
 .time {
-
+display: flex;
+    justify-content: flex-end;
+    color: indigo;
 }
