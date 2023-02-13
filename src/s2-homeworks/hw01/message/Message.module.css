@@ -32,7 +32,7 @@
 }
 
 .messageText {
-min-width: 150px;
+    min-width: 150px;
     max-width: 300px;
     word-wrap: break-word;
     color: white;

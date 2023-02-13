@@ -1,13 +1,12 @@
 .sendForm {
-background-color: gold;
     display: flex;
-    justify-content: space-around;
-}
+    justify-content: space-evenly;}
 
 .textarea {
-    height: 40px;
+    min-height: 40px;
     width: 976px;
     border-radius: 20px;
+    background-color: #F5F7FB;
 
 }
 
