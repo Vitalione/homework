@@ -1,6 +1,6 @@
 {
-  "name": "Home-Work",
-  "homepage": "https://github.com/Vitalione/Home-Work.git",
+  "name": "homework",
+  "homepage": "https://github.com/Vitalione/homework.git",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
