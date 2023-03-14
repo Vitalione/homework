@@ -1,17 +1,17 @@
 import React from 'react'
-import { AffairType } from '../../HW2'
+import {AffairType} from '../../HW2'
 import s from './Affair.module.css'
 import s2 from '../Affairs.module.css'
 
 type AffairPropsType = {
     // key не нужно типизировать
     affair: AffairType
-    deleteAffairCallback: any // need to fix any
+    deleteAffairCallback: (_id: number) => void // need to fix any
 }
 
 function Affair(props: AffairPropsType) {
-    const deleteCallback = () => {
-        // need to fix
+    const deleteCallback = (_id: number) => {
+        props.deleteAffairCallback(props.affair._id)// need to fix
     }
 
     const nameClass = s.name + ' ' + s2[props.affair.priority]
@@ -46,4 +46,5 @@ function Affair(props: AffairPropsType) {
     )
 }
 
-export default Affair
+
+export default Affair;
