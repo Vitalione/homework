@@ -19,7 +19,9 @@ const arr = [
 
 const HW7 = () => {
     const [value, onChangeOption] = useState(1) // селект и радио должны работать синхронно
-
+    const onChangeRadio = (option: number) => {
+        onChangeOption(option)
+    }
     return (
         <div id={'hw7'}>
             <div className={s2.hwTitle}>Homework #7</div>
@@ -33,6 +35,7 @@ const HW7 = () => {
                             options={arr}
                             value={value}
                             onChangeOption={onChangeOption}
+                            onChangeChecked={onChangeRadio}
                         />
                     </div>
                     <div>
@@ -42,6 +45,7 @@ const HW7 = () => {
                             options={arr}
                             value={value}
                             onChangeOption={onChangeOption}
+
                         />
                     </div>
                 </div>
