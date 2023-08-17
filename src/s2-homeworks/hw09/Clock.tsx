@@ -40,10 +40,10 @@ function Clock() {
         year: 'numeric',
     });
 
-    const stringTime = date.toLocaleTimeString('en-US', {
+    const stringTime = date.toLocaleTimeString('ru-RU', {
+        hour12: false,
         hour: '2-digit',
         minute: '2-digit',
-        second: '2-digit',
     }) // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
     const stringDate = dateFormatter.format(date) // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
 
