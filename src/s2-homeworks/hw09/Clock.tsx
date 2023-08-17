@@ -6,7 +6,7 @@ import s from './Clock.module.css'
 function Clock() {
     const [timerId, setTimerId] = useState<number | undefined>(undefined)
     // for autotests // не менять // можно подсунуть в локалСторэдж нужную дату, чтоб увидеть как она отображается
-    const [date, setDate] = useState<Date>(new Date(restoreState('hw9-date', Date.now())))
+    const [date, setDate] = useState<Date>(new Date())
     const [show, setShow] = useState<boolean>(false)
 
     const start = () => {
@@ -37,8 +37,10 @@ function Clock() {
     const stringTime = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' }) // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
     const stringDate = date.toLocaleDateString() // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
 
+    const options = { weekday: 'long', month: 'long' }
+
     // день недели на английском, месяц на английском (https://learn.javascript.ru/intl#intl-datetimeformat)
-    const stringDay = new Intl.DateTimeFormat('en-US').format(date)// пишут студенты
+    const stringDay =  new Intl.DateTimeFormat('en-US', { weekday: 'long', month: 'long' }).format(date)// пишут студенты
     const stringMonth = new Intl.DateTimeFormat('en-US', { month: 'long' }).format(date) // пишут студенты
 
     return (
