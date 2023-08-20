@@ -19,6 +19,7 @@ const HW13 = () => {
     const [text, setText] = useState('')
     const [info, setInfo] = useState('')
     const [image, setImage] = useState('')
+    const [isSending, setIsSending] = useState(false)
 
     const send = (x?: boolean | null) => () => {
         const url =
@@ -31,6 +32,7 @@ const HW13 = () => {
         setImage('')
         setText('')
         setInfo('...loading')
+        setIsSending(true)
 
         axios
             .post(url, {success: x})
@@ -38,11 +40,11 @@ const HW13 = () => {
                 setCode('Код 200!')
                 setImage(success200)
                 // дописать
-
+                setIsSending(false)
             })
             .catch((e) => {
                 // дописать
-
+                setIsSending(false)
             })
     }
 
@@ -56,6 +58,7 @@ const HW13 = () => {
                         id={'hw13-send-true'}
                         onClick={send(true)}
                         xType={'secondary'}
+                        disabled={isSending}
                         // дописать
 
                     >
@@ -65,6 +68,7 @@ const HW13 = () => {
                         id={'hw13-send-false'}
                         onClick={send(false)}
                         xType={'secondary'}
+                        disabled={isSending}
                         // дописать
 
                     >
@@ -74,6 +78,7 @@ const HW13 = () => {
                         id={'hw13-send-undefined'}
                         onClick={send(undefined)}
                         xType={'secondary'}
+                        disabled={isSending}
                         // дописать
 
                     >
@@ -83,6 +88,7 @@ const HW13 = () => {
                         id={'hw13-send-null'}
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
+                        disabled={isSending}
                         // дописать
 
                     >
