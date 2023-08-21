@@ -18,8 +18,12 @@ function HW11() {
     const change = (event: React.ChangeEvent<{}> | Event, value: number | number[]) => {
         // пишет студент // если пришёл массив - сохранить значения в оба useState, иначе в первый
         if (Array.isArray(value)) {
-            setValue1(value[0]);
-            setValue2(value[1]);
+            if (value[0] !== value1) {
+                setValue1(value[0]);
+            }
+            if (value[1] !== value2) {
+                setValue2(value[1]);
+            }
         } else {
             setValue1(value);
         }
